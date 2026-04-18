@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lookbook | IZLES</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Pretendard:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Pretendard', sans-serif;
+      opacity: 0;
+      transition: 0.8s;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      letter-spacing: 4px;
+    }
+
+    .logo a,
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .menu a {
+      margin-left: 20px;
+      opacity: 0.7;
+      transition: 0.3s;
+    }
+
+    .menu a:hover {
+      opacity: 1;
+    }
+
+    .hero {
+      height: 55vh;
+      background: url('img3.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      padding: 0 20px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+
+    .hero h1,
+    .hero p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 4px;
+      margin-bottom: 12px;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 120px 20px;
+    }
+
+    h2 {
+      margin-bottom: 26px;
+      letter-spacing: 3px;
+      font-size: 2rem;
+    }
+
+    .lookbook {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .lookbook div {
+      background: #111;
+      padding: 10px;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .lookbook div:hover {
+      transform: translateY(-5px);
+    }
+
+    .lookbook img {
+      width: 100%;
+      height: 240px;
+      object-fit: contain;
+      background: #111;
+      border-radius: 10px;
+      cursor: pointer;
+      filter: grayscale(100%);
+      transition: 0.4s;
+    }
+
+    .lookbook img:hover {
+      filter: grayscale(0%);
+      transform: scale(1.03);
+      box-shadow: 0 10px 30px rgba(255,255,255,0.08);
+    }
+
+    .lookbook p {
+      text-align: center;
+      font-size: 0.95rem;
+      opacity: 0.8;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .big-text {
+      text-align: center;
+      padding: 150px 20px 40px;
+    }
+
+    .big-text h1 {
+      font-size: 4rem;
+      opacity: 0.08;
+      letter-spacing: 10px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .fade {
+      opacity: 0;
+      transform: scale(0.95);
+      transition: 0.7s;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    #modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+
+    #modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      opacity: 0.45;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .lookbook {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        padding: 16px 20px;
+      }
+
+      .menu a {
+        margin-left: 12px;
+        font-size: 0.9rem;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .big-text h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .lookbook {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="logo"><a href="index.html">IZLES</a></div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="lookbook.html" style="opacity:1;">Lookbook</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Lookbook</h1>
+    <p>Selected Looks by IZLES</p>
+  </section>
+
+  <section class="big-text">
+    <h1>DISCOVER YOUR TASTE</h1>
+  </section>
+
+  <section class="fade">
+    <h2>Selected Looks</h2>
+    <div class="lookbook">
+      <div>
+        <img src="img1. jpg.JPG" alt="검정 자켓 코디">
+        <p>검정 자켓을 활용한 코디</p>
+      </div>
+
+      <div>
+        <img src="img2. jpg.JPG" alt="올블랙 코디">
+        <p>올블랙을 이용한 코디</p>
+      </div>
+
+      <div>
+        <img src="img3. jpg.JPG" alt="회색 집업 코디">
+        <p>회색 집업을 활용한 코디</p>
+      </div>
+
+      <div>
+        <img src="img4. jpg.JPG" alt="브라운 자켓 코디">
+        <p>브라운 자켓을 활용한 코디</p>
+      </div>
+
+      <div>
+        <img src="img5. jpg.JPG" alt="체크 자켓 코디">
+        <p>체크 자켓을 활용한 레이어드 코디</p>
+      </div>
+
+      <div>
+        <img src="img6. jpg.JPG" alt="네이비 니트 코디">
+        <p>네이비 니트를 활용한 코디</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="modal">
+    <img id="modalImg" alt="확대 이미지">
+  </div>
+
+  <footer>
+    © 2026 IZLES. All rights reserved.
+  </footer>
+
+  <script>
+    const fadeEls = document.querySelectorAll('.fade');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    });
+
+    fadeEls.forEach(el => observer.observe(el));
+
+    const images = document.querySelectorAll('.lookbook img');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modalImg');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        modalImg.src = img.src;
+      });
+    });
+
+    modal.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('load', () => {
+      document.body.style.opacity = 1;
+    });
+  </script>
+</body>
+</html>

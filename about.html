@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | IZLES</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Pretendard:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Pretendard', sans-serif;
+      opacity: 0;
+      transition: 0.8s;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      letter-spacing: 4px;
+    }
+
+    .logo a,
+    .menu a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .menu a {
+      margin-left: 20px;
+      opacity: 0.7;
+      transition: 0.3s;
+    }
+
+    .menu a:hover {
+      opacity: 1;
+    }
+
+    .hero {
+      height: 55vh;
+      background: url('img2.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      padding: 0 20px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+
+    .hero h1,
+    .hero p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 4px;
+      margin-bottom: 12px;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 120px 20px;
+    }
+
+    h2 {
+      margin-bottom: 26px;
+      letter-spacing: 3px;
+      font-size: 2rem;
+    }
+
+    .text {
+      max-width: 640px;
+      line-height: 1.9;
+      opacity: 0.88;
+      margin-left: 120px;
+    }
+
+    .timeline {
+      max-width: 640px;
+      margin-left: 120px;
+    }
+
+    .timeline p {
+      margin-bottom: 14px;
+      font-size: 1rem;
+      opacity: 0.88;
+      line-height: 1.8;
+    }
+
+    .timeline strong {
+      display: inline-block;
+      min-width: 120px;
+      color: #fff;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 12px 24px;
+      border: 1px solid #fff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: 0.3s;
+      background: transparent;
+    }
+
+    .btn:hover {
+      background: #fff;
+      color: #000;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(255,255,255,0.15);
+    }
+
+    .fade {
+      opacity: 0;
+      transform: scale(0.95);
+      transition: 0.7s;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      opacity: 0.45;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        padding: 16px 20px;
+      }
+
+      .menu a {
+        margin-left: 12px;
+        font-size: 0.9rem;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .text,
+      .timeline {
+        margin-left: 0;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="logo"><a href="index.html">IZLES</a></div>
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html" style="opacity:1;">About</a>
+      <a href="lookbook.html">Lookbook</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>About izles</h1>
+    <p>취향을 발견하고 기록하는 공간</p>
+  </section>
+
+  <section id="about" class="fade">
+    <h2>About</h2>
+    <p class="text">
+      나는 옷을 굉장히 좋아하는 사람이다.
+      패션을 단순히 입고 소비하는 것이 아니라,
+      나만의 감각으로 재해석하고 표현하는 것을 좋아한다.
+      <br><br>
+      옷을 통해 분위기와 실루엣을 만들고,
+      그 안에서 나만의 기준을 만들어가고 있다.
+      <br><br>
+      현재 한성대학교 문학문화콘텐츠학과 23학번으로 재학 중이며,
+      인스타그램 izles를 통해 나만의 취향과 스타일을 공유하고 있다.
+    </p>
+  </section>
+
+  <section class="fade">
+    <h2>Journey</h2>
+    <div class="timeline">
+      <p><strong>2004.01.31</strong> 경기도 양주 출생</p>
+      <p><strong>Elementary</strong> 주원초등학교 졸업</p>
+      <p><strong>High School</strong> 덕정고등학교 졸업</p>
+      <p><strong>Now</strong> 한성대학교 재학 중</p>
+    </div>
+  </section>
+
+  <section class="fade">
+    <h2>Why</h2>
+    <p class="text">
+      나는 단순히 옷을 보여주는 것이 아니라,
+      사람들이 자신의 취향을 발견할 수 있도록 도움을 주고 싶었다.
+      <br><br>
+      izles는 옷과 취향을 공유하는 공간을 넘어서,
+      각자의 스타일과 취향을 발견하고 더 합리적인 선택으로 이어질 수 있도록
+      돕는 공간이 되기를 바라고 있다.
+    </p>
+  </section>
+
+  <section id="project" class="fade">
+    <h2>izles</h2>
+    <p class="text">
+      izles는 ‘취향’이라는 의미를 담고 있는 이름이다.
+      <br><br>
+      나는 이 공간을 통해 다양한 스타일과 분위기를 공유하고,
+      사람들이 각자의 취향을 발견할 수 있기를 바란다.
+      <br><br>
+      단순한 의류 소개를 넘어서,
+      누군가의 취향을 형성하는 계기가 되는 공간이 되기를 목표로 하고 있다.
+      앞으로 izles를 하나의 브랜드로 발전시키고,
+      취향을 기반으로 선택과 소비가 이루어지는 플랫폼으로 만들고 싶다.
+    </p>
+
+    <p class="text">
+      <a href="https://instagram.com/yourizles" target="_blank" class="btn">Instagram 바로가기</a>
+    </p>
+  </section>
+
+  <section id="contact" class="fade">
+    <h2>Contact</h2>
+    <p class="text">Email: c99812@naver.com</p>
+  </section>
+
+  <footer>
+    © 2026 IZLES. All rights reserved.
+  </footer>
+
+  <script>
+    const fadeEls = document.querySelectorAll('.fade');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    });
+
+    fadeEls.forEach(el => observer.observe(el));
+
+    window.addEventListener('load', () => {
+      document.body.style.opacity = 1;
+    });
+  </script>
+</body>
+</html>
